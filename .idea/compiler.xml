@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="guiex1[org.example]" target="17" />
+      <module name="guiex1[org.example].main" target="17" />
+      <module name="guiex1[org.example].test" target="17" />
+      <module name="org.example" target="17" />
+      <module name="org.example.main" target="17" />
+      <module name="org.example.test" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
