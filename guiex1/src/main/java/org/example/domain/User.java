@@ -9,8 +9,6 @@ public class User extends Entity<UUID> {
 
     private String pword;
 
-    //CONSTRUCTORS
-
     public User() {
     }
 
@@ -18,8 +16,6 @@ public class User extends Entity<UUID> {
         this.userName = userName;
         this.pword = pword;
     }
-
-    //GETTERS AND SETTERS
 
     public String getUserName() {
         return userName;
@@ -36,8 +32,6 @@ public class User extends Entity<UUID> {
     public void setPword(String pword) {
         this.pword = pword;
     }
-
-    //EQUALS AND HASHCODE METHODS
 
     @Override
     public boolean equals(Object o) {

@@ -58,15 +58,10 @@ public class UserController {
 
     public TextField handleFiltre;
 
-    /**
-     * Populates tables with - users from database
-     *                       - owner's friends
-     *                       - owner's requests
-     */
-
     private void populateTabels(){
 
         Predicate<User> notMe= user -> !user.getUserName().equals(owner.getUserName());
+        //TODO vezi daca merge fara 'ACCEPTED'
 
         var requestsList=service.getUsers().stream()
                 .filter((el)-> ! service.getUserRequests(owner).stream().filter(e->!e.isStatus())
@@ -113,9 +108,6 @@ public class UserController {
                 .toList());
     }
 
-    /**
-     *
-     */
     public void initialize(){
         colUsername.setCellValueFactory(new PropertyValueFactory<>("userName"));
         colRequests.setCellValueFactory(new PropertyValueFactory<>("userName"));
@@ -220,7 +212,7 @@ public class UserController {
         }
         else {
             friendship.setUser1(user.getId());
-            friendship.setUser1(owner.getId());
+            friendship.setUser2(owner.getId());
         }
         if(found1==null && found2 == null){
             Alert a=new Alert(Alert.AlertType.WARNING);
@@ -272,7 +264,7 @@ public class UserController {
             friendship.setDate(LocalDateTime.now());
             service.addFriend(friendship);
             service.deleteRequest(found);
-            Alert a=new Alert(Alert.AlertType.INFORMATION);
+            Alert a=new Alert(Alert.AlertType.WARNING);
             a.setTitle("Success");
             a.setContentText("Friendship accepted");
             a.show();

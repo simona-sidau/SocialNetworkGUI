@@ -19,9 +19,6 @@ public class Friendship<ID extends UUID>extends Entity<ID>{
         date = LocalDateTime.now();
     }
 
-
-    //GETTERS ANS SETTERS
-
     public ID getUser1() {
         return user1;
     }
@@ -46,8 +43,6 @@ public class Friendship<ID extends UUID>extends Entity<ID>{
         this.date = date;
     }
 
-    // EQUALS AND HASHCODE
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -60,8 +55,6 @@ public class Friendship<ID extends UUID>extends Entity<ID>{
     public int hashCode() {
         return Objects.hash(user1, user2, date);
     }
-
-    //TO STRING METHOD
 
     @Override
     public String toString() {

@@ -14,9 +14,6 @@ public class Request<ID>extends Entity<ID>{
 
     boolean status;
 
-
-    //CONSTRUCTORS
-
     public Request(){}
 
     public Request(UUID user1, UUID user2) {
@@ -26,9 +23,6 @@ public class Request<ID>extends Entity<ID>{
         this.date =LocalDateTime.now();
 
     }
-
-
-    // SETTERS AND GETTERS
 
     public UUID getUser1() {
         return user1;
@@ -62,8 +56,6 @@ public class Request<ID>extends Entity<ID>{
         this.status = status;
     }
 
-    //EQUALS AND HASHCODE METHODS
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -76,8 +68,6 @@ public class Request<ID>extends Entity<ID>{
     public int hashCode() {
         return Objects.hash(user1, user2, date, status);
     }
-
-    // TO STRING METHOD
 
     @Override
     public String toString() {

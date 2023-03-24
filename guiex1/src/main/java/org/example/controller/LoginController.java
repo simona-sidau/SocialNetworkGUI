@@ -33,11 +33,6 @@ public class LoginController {
     @FXML
     public Text textPassword;
 
-    /**
-     * Verifies in credentials are correct and launches userView
-     * @param actionEvent
-     * @throws IOException
-     */
     public void login(ActionEvent actionEvent) throws IOException {
 
         var x = service.login(txtFieldUsername.getText(), txtFieldPassword.getText());
@@ -64,11 +59,6 @@ public class LoginController {
             crtStage.close();
         }
     }
-
-    /**
-     * Sets service
-     * @param s - Service entity
-     */
     public void setService(Service s) {
         this.service = s;
     }

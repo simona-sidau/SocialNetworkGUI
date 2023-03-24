@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="624.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.UserController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.UserController">
    <children>
       <Text fill="#6e0581" layoutX="156.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MySocialNetwork" wrappingWidth="287.73681640625">
          <font>
@@ -39,13 +39,13 @@
       </Group>
       <Group fx:id="RequestGroup" layoutX="417.0" layoutY="91.0">
          <children>
-            <TableView fx:id="requestTab" layoutX="9.0" layoutY="15.0" prefHeight="219.0" prefWidth="144.0">
+            <TableView fx:id="requestTab" layoutX="-8.0" layoutY="15.0" prefHeight="219.0" prefWidth="153.0">
                <columns>
-                  <TableColumn fx:id="colRequests" prefWidth="116.79995727539062" text="Requests" />
+                  <TableColumn fx:id="colRequests" prefWidth="142.40008544921875" text="Requests" />
                </columns>
             </TableView>
-            <Button fx:id="acceptRequest" layoutX="90.0" layoutY="233.0" mnemonicParsing="false" onAction="#acceptRequest" prefHeight="25.0" prefWidth="63.0" text="Accept" />
-            <Button fx:id="declineRequest" layoutX="9.0" layoutY="233.0" mnemonicParsing="false" onAction="#declineRequest" prefHeight="25.0" prefWidth="60.0" text="Delete" />
+            <Button fx:id="acceptRequest" layoutX="82.0" layoutY="233.0" mnemonicParsing="false" onAction="#acceptRequest" prefHeight="25.0" prefWidth="63.0" text="Accept" />
+            <Button fx:id="declineRequest" layoutX="8.0" layoutY="233.0" mnemonicParsing="false" onAction="#declineRequest" prefHeight="25.0" prefWidth="60.0" text="Delete" />
          </children>
       </Group>
    </children>

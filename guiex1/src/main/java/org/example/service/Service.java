@@ -30,13 +30,6 @@ public class Service {
 
     FriendshipValidator friendshipValidator = new FriendshipValidator();
 
-
-    /**
-     * Checks if username and password are correct
-     * @param username - String
-     * @param password - String
-     * @return
-     */
     public Optional<User> login(String username, String password) {
         var user = userRepository.findUsername(username);
         if (user != null && user.getPword().equals(password))
@@ -45,11 +38,6 @@ public class Service {
             return Optional.empty();
     }
 
-    /**
-     * Adds a request to database
-     * @param req - Request entity
-     * @throws ServiceException
-     */
     public void addRequest(Request<Integer> req) throws ServiceException {
         try {
             req.setStatus(false);
@@ -58,47 +46,21 @@ public class Service {
             throw new ServiceException(e);
         }
     }
-
-    /**
-     * Search for a Request in database
-     * @param entity - Request entity
-     * @return - Request entity if it exists, null if not
-     */
     public Request<Integer> findRequest(Request<Integer> entity){return requestRepository.find(entity);}
     public User findUserByUserName(String userName){
         return  userRepository.findUsername(userName);
     }
-
-    /**
-     * Gets all users from database
-     * @return - List with all users
-     */
     public List<User> getUsers(){
         return  userRepository.getAll();
     }
 
-    /**
-     * Gets all requests from database
-     * @return - List with all requests
-     */
     public List<Request<Integer>> getRequests(){
         return requestRepository.getAll();
     }
-
-    /**
-     * Gets all requests for a user
-     * @param owner - User entity
-     * @return - List
-     */
     public List<Request<Integer>> getUserRequests(User owner){
         return requestRepository.findRequests(owner.getId());
     }
 
-    /**
-     * Gets all friends for a user
-     * @param owner - User entity
-     * @return - List
-     */
     public  List<Friendship<UUID>> getFriendsOf(User owner) { return friendshipRepository.getFriends(owner.getId());
     }
     public User findUserById(UUID e) {
@@ -106,12 +68,6 @@ public class Service {
         aux.setId(e);
         return userRepository.find(aux);
     }
-
-    /**
-     * Add a friendship to database
-     * @param friendship - Frienship entity
-     * @throws ServiceException
-     */
     public void addFriend(Friendship<UUID> friendship) throws ServiceException {
         try {
 
@@ -120,12 +76,6 @@ public class Service {
             throw new ServiceException(e);
         }
     }
-
-    /**
-     * Remove a request from database
-     * @param found - Request to be deleted
-     * @throws ServiceException
-     */
     public void deleteRequest(Request<Integer> found) throws ServiceException {
         try {
             requestRepository.delete(found);
@@ -133,21 +83,10 @@ public class Service {
             throw new ServiceException(e.getMessage());
         }
     }
-
-    /**
-     * Searches for friendship in database
-     * @param friendship - Friendship entity
-     * @return - Friendship entity if it exists, null if not
-     */
     public Friendship<UUID> findFriendship(Friendship<UUID> friendship) {
         return friendshipRepository.find(friendship);
     }
 
-    /**
-     * Deletes a Friendship from database
-     * @param friendship - Friendship entity
-     * @throws ServiceException
-     */
     public void deleteFriend(Friendship<UUID> friendship) throws ServiceException {
         try {
             friendshipRepository.delete(friendship);
